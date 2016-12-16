@@ -32,19 +32,20 @@ from keras.optimizers import RMSprop
 
 __author__ = "Jacopo Credi"
 __license__ = "MIT"
-__version__ = "1.3.3-rc"
+__version__ = "1.4.1-rc"
 __email__ = "jacopo.credi@gmail.com"
 
 parser = argparse.ArgumentParser(description='Trains an LSTM for scientific paper titles generation.')
 parser.add_argument('--dataDumpPath', dest='dump_file_path', default=os.getcwd()+'/data_dump/arxiv_dump.csv', 
     help='Path to text corpus file. Default: "<current_working_directory>/data_dump/arxiv_dump.csv"')
-parser.add_argument('--sequenceLength', dest='seq_length', default=40, help='Length of sequences to be extracted from the corpus. Default: 40')
-parser.add_argument('--step', dest='step', default=3, help='Steps by which the corpus will be cut into sequences. Default: 3')
-parser.add_argument('--lstmUnits', dest='lstm_units', default=128, help='Number of LSTM units. Default: 128')
-parser.add_argument('--epochs', dest='epochs', default=60, help='Number of training epochs. Default: 60')
-parser.add_argument('--batchSize', dest='batch_size', default=128, help='Mini-batch size. Default: 128')
-parser.add_argument('--temperature', dest='temperature', default=0.5, help='Controls the randomness level in the generation of new sequences. Default: 0.5')
-parser.add_argument('--outputSequenceLength', dest='output_seq_length', default=400, help='Length of the generated text to be displayed after each epoch. Default: 400')
+parser.add_argument('--sequenceLength', dest='seq_length', type=int, default=40, help='Length of sequences to be extracted from the corpus. Default: 40')
+parser.add_argument('--step', dest='step', type=int, default=3, help='Steps by which the corpus will be cut into sequences. Default: 3')
+parser.add_argument('--lstmUnits', dest='lstm_units', type=int, default=128, help='Number of LSTM units. Default: 128')
+parser.add_argument('--epochs', dest='epochs', type=int, default=60, help='Number of training epochs. Default: 60')
+parser.add_argument('--learningRate', dest='learning_rate', type=float, default=0.01, help='Learning rate used by the RMSprop optimizer. Default: 0.01')
+parser.add_argument('--batchSize', dest='batch_size', type=int, default=128, help='Mini-batch size. Default: 128')
+parser.add_argument('--temperature', dest='temperature', type=float, default=0.5, help='Controls the randomness level in the generation of new sequences. Default: 0.5')
+parser.add_argument('--outputSequenceLength', dest='output_seq_length', type=int, default=400, help='Length of the generated text to be displayed after each epoch. Default: 400')
 
 args = parser.parse_args()
 
@@ -84,11 +85,11 @@ for i, sequence in enumerate(sequences):
 # build the model: a single LSTM
 print('Build model...')
 model = Sequential()
-model.add(LSTM(128, input_shape=(maxlen, len(chars))))
+model.add(LSTM(args.lstm_units, input_shape=(maxlen, len(chars))))
 model.add(Dense(len(chars)))
 model.add(Activation('softmax'))
 
-optimizer = RMSprop(lr=0.01)
+optimizer = RMSprop(lr=args.learning_rate)
 model.compile(loss='categorical_crossentropy', optimizer=optimizer)
 
 
