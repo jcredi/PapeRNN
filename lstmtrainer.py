@@ -29,12 +29,10 @@ import argparse
 from keras.models import Sequential 
 from keras.layers import LSTM, Dense, Activation
 from keras.optimizers import RMSprop
-from keras.callbacks import ModelCheckpoint
-from keras.utils.data_utils import get_file
 
 __author__ = "Jacopo Credi"
 __license__ = "MIT"
-__version__ = "1.3.2-rc"
+__version__ = "1.3.3-rc"
 __email__ = "jacopo.credi@gmail.com"
 
 parser = argparse.ArgumentParser(description='Trains an LSTM for scientific paper titles generation.')
