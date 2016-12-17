@@ -11,9 +11,12 @@ This is an overnight project where I had a lot of fun mining scientific article 
 
 
 ## Usage
-The entire project takes up less than 250 lines of python code and consists of two simple scripts:
-* harvester.py
-* lstmtrainer.py
+The entire project takes up less than 250 lines of python code and consists of two simple scripts.
+
+First, we'll need to mine some data. This is as simple as running
+```{r, engine='bash', count_lines}
+python harvester.py
+```
 
 ## License
 
