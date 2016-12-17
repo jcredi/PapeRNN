@@ -35,7 +35,7 @@ parser.add_argument('--arxiv', dest='arxiv', default='stat', help='Top-level arc
 parser.add_argument('--category', dest='category', default='stat.ML', help='Archive category to consider. Default: "stat.ML"')
 parser.add_argument('--dateFrom', dest='date_from', default='2007-05-01', help='Start date. Default: "2007-05-01"')
 parser.add_argument('--dateTo', dest='date_to', default='2016-11-31', help='End date. Default: "2016-11-31"')
-parser.add_argument('--dataDumpPath', dest='dump_file_path', default=os.getcwd()+'/data_dump/arxiv_dump.csv', 
+parser.add_argument('--dataDumpPath', dest='dump_file_path', default=os.getcwd()+'/data/dump.csv', 
     help='Path to file where harvested data will be saved for later use. Default: "<current_working_directory>/data_dump/arxiv_dump.csv"')
 
 args = parser.parse_args()

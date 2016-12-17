@@ -36,8 +36,7 @@ __version__ = "1.4.1-rc"
 __email__ = "jacopo.credi@gmail.com"
 
 parser = argparse.ArgumentParser(description='Trains an LSTM for scientific paper titles generation.')
-parser.add_argument('--dataDumpPath', dest='dump_file_path', default=os.getcwd()+'/data_dump/arxiv_dump.csv', 
-    help='Path to text corpus file. Default: "<current_working_directory>/data_dump/arxiv_dump.csv"')
+parser.add_argument('--dataDumpPath', dest='dump_file_path', default=os.getcwd()+'/data/dump.csv', help='Path to text corpus file. Default: "<current_working_directory>/data_dump/arxiv_dump.csv"')
 parser.add_argument('--sequenceLength', dest='seq_length', type=int, default=40, help='Length of sequences to be extracted from the corpus. Default: 40')
 parser.add_argument('--step', dest='step', type=int, default=3, help='Steps by which the corpus will be cut into sequences. Default: 3')
 parser.add_argument('--lstmUnits', dest='lstm_units', type=int, default=128, help='Number of LSTM units. Default: 128')
