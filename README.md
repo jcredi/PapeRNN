@@ -6,7 +6,7 @@ This is an overnight project where I had a lot of fun mining scientific article 
 
 * [Python 2.7](https://www.python.org/downloads/) (tested on 2.7.12 on Ubuntu 16.04)
 * [Keras](https://keras.io/), a high-level neural networks library. See the [documentation](https://keras.io/#installation) for installation instructions.
-* A backend for Keras. Here you can either choose [TensorFlow](https://www.tensorflow.org/) ([installation instructions](https://www.tensorflow.org/get_started/os_setup)) or [Theano](http://deeplearning.net/software/theano/) ([installation instructions](http://deeplearning.net/software/theano/install.html)). I have personally tested this specific project with Theano (8.2) only, but I frequently use TensorFlow as Keras backend in other projects and it works just as well (if not faster, after the last release).
+* A backend for Keras. You can either choose [TensorFlow](https://www.tensorflow.org/) ([installation](https://www.tensorflow.org/get_started/os_setup)) or [Theano](http://deeplearning.net/software/theano/) ([installation](http://deeplearning.net/software/theano/install.html)). I have personally tested this specific project with Theano (8.2) only, but I frequently use TensorFlow as Keras backend in other projects and it works just as well (if not faster, after the last release).
 * CUDA and cuDNN. Optional, but highly recommended, as training LSTMs is quite computationally intensive. See [this page](https://www.tensorflow.org/get_started/os_setup#optional_install_cuda_gpus_on_linux) for CUDA/cuDNN installation instructions if you are using TensorFlow, or [this page](http://deeplearning.net/software/theano/tutorial/using_gpu.html) if you are using Theano.
 
 
@@ -42,7 +42,7 @@ and play around with hyperparameters!
 
 ### Sample console output
 
-```{r, engine='shell', count_lines}
+```{r, engine='bash', count_lines}
 Using Theano backend.
 Using gpu device 0: GeForce GTX 850M (CNMeM is disabled, cuDNN 5105)
 Corpus length: 128762
@@ -60,7 +60,7 @@ ing Pharmacotherapy Using Belgian Health in Near and Malk Apporening Matrix Proc
 --------------------------------------------------
 ```
 ...5 epochs later...
-```{r, engine='shell', count_lines}
+```{r, engine='bash', count_lines}
 --------------------------------------------------
 Epoch  5
 Epoch 1/1
@@ -70,7 +70,7 @@ stic Model to a Deterministic Algorithm. Process Convergence. Bayesian ivery A G
 --------------------------------------------------
 ```
 ...and 5 more...
-```{r, engine='shell', count_lines}
+```{r, engine='bash', count_lines}
 --------------------------------------------------
 Epoch  10
 Epoch 1/1
@@ -80,7 +80,7 @@ sitions via the Subspace Norm. Differential Inference for Classification of the 
 --------------------------------------------------
 ```
 ...and 5 more...
-```{r, engine='shell', count_lines}
+```{r, engine='bash', count_lines}
 --------------------------------------------------
 Epoch  15
 Epoch 1/1
