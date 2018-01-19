@@ -1,6 +1,6 @@
 # Paper titles LSTM generator
 
-This is a little project where I had a lot of fun mining scientific publication data from the [arXiv](https://arxiv.org/) and training an [Long Short Term Memory (LSTM)](https://www.google.it/url?sa=t&rct=j&q=&esrc=s&source=web&cd=4&cad=rja&uact=8&ved=0ahUKEwj1vtjD6vnQAhUGWxQKHQ42B48QFggzMAM&url=http%3A%2F%2Fdeeplearning.cs.cmu.edu%2Fpdfs%2FHochreiter97_lstm.pdf&usg=AFQjCNGoFvqrva4rDCNIcqNe_SiPL_VPxg) neural network for generating new article titles.
+This is a little project where I had a lot of fun mining scientific publication data from the [arXiv](https://arxiv.org/) and training an [Long Short Term Memory (LSTM)](http://www.bioinf.jku.at/publications/older/2604.pdf) neural network for generating new article titles.
 
 ## Requirements
 
